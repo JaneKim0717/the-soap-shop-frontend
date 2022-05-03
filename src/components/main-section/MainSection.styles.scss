@@ -1,0 +1,48 @@
+.main-section-container {
+  width: 75%;
+  margin: 3rem auto;
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  .ms-m-description {
+    p {
+      font-size: 0.933rem;
+      line-height: 1.5;
+    }
+  }
+
+  @media(min-width: 1024px) {
+    .main-section-middle {
+      display: flex;
+      justify-content: space-between;
+
+      .ms-m-image {
+        max-width: 500px;
+        flex: 1 0 500px;
+      }
+      .ms-m-description {
+        margin-left: 30px;
+        align-self: center;
+        p {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+
+  .welcome-titles {
+    text-align: center;
+  }
+
+  .welcome-main-section {
+    text-align: center;
+  }
+
+  .ms-shop-all-bttn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
