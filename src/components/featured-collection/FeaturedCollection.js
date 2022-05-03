@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { ProductsContext } from '../../context/ProductsContext'
 import FeaturedProduct from '../shared/FeaturedProduct'
+import './FeaturedCollection.styles.scss'
 
 function FeaturedCollection() {
 

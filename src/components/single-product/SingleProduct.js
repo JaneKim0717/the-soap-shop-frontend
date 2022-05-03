@@ -1,12 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { withRouter } from 'react-router-dom'
 import { ProductsContext } from '../../context/ProductsContext'
+import { CartContext }from '../../context/CartContext'
+import { isInCart } from '../../Helpers'
 import Layout from '../shared/Layout'
 import './SingleProduct.styles.scss'
 
 function SingleProduct({match, history: { push } }) {
 
   const { products } = useContext(ProductsContext)
+  const { addProduct, cartItems, increase } = useContext(CartContext)
   const { id } = match.params
   
   const [product, setProduct] = useState(null)
@@ -24,6 +27,7 @@ function SingleProduct({match, history: { push } }) {
 
   
   const { image, name, price, description, ingredients } = product
+  const itemInCart = isInCart(product, cartItems)
 
   return (
     <Layout>
@@ -37,9 +41,20 @@ function SingleProduct({match, history: { push } }) {
             <h2>${price}.00</h2>
           </div>
           <div className='add-to-cart-btns'>
-            <button className='button is-white nomad-btn' id='btn-white-outline'>
-              ADD TO CART
-            </button>
+            {
+              !itemInCart &&             
+              <button className='button is-white nomad-btn' id='btn-white-outline' 
+              onClick={() => addProduct(product)}>
+                ADD TO CART
+              </button>
+            }
+            {
+              itemInCart &&             
+              <button className='button is-white nomad-btn' id='btn-white-outline' 
+              onClick={() => increase(product)}>
+                ADD MORE
+              </button>
+            }
             <button className='button is-black nomad-btn' id='btn-white-outline'>
               PROCEED TO CHECKOUT
             </button>
