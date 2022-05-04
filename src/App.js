@@ -1,22 +1,65 @@
+import React, { useState, useEffect } from 'react'
 import { Switch, Route } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import NotFound from './components/NotFound';
 import Shop from './components/pages/Shop';
 import SingleProduct from './components/single-product/SingleProduct';
 import CartPage from './components/pages/cart-page/CartPage';
+import NavBar from './components/navbar/NavBar';
+import SignIn from './components/sign-in/SignIn';
+import AboutUs from './components/AboutUs';
 import './App.scss';
 
 
+
 function App() {
+
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/me')
+    .then((r) => {
+      if (r.ok) {
+        r.json()
+        .then((user) => setUser(user));
+      }
+    });
+  }, []);
+
+
+
   return (
     <div className="App">
-      <Switch>
-        <Route exact path='/' component={HomePage} />
-        <Route exact path='/shop' component={Shop} />
-        <Route exact path='/product/:id' component={SingleProduct} />
-        <Route exact path='/cart' component={CartPage} />
-        <Route exact path='*' component={NotFound} />
-      </Switch>
+      <NavBar user={user} setUser={setUser}/>  
+        <Switch>
+          <Route exact path='/'> 
+            <HomePage /> 
+          </Route>
+
+          <Route exact path='/shop'> 
+            <Shop /> 
+          </Route> 
+
+          <Route exact path='/about'> 
+            <AboutUs /> 
+          </Route> 
+
+          <Route exact path='/signin'> 
+            <SignIn onLogin={setUser} /> 
+          </Route>
+
+          <Route exact path='/product/:id'> 
+            <SingleProduct /> 
+          </Route>
+
+          <Route exact path='/cart'> 
+            <CartPage /> 
+          </Route> 
+
+          <Route exact path='*'> 
+            <NotFound /> 
+          </Route>
+        </Switch>
     </div>
   );
 }

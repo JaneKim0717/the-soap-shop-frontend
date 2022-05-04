@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
     left: 0,
     width: '100%',
     height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.2)',
+    backgroundColor: 'rgba(0, 0, 0, 0.3)',
   },
   title: {
     paddingBottom: theme.spacing(4),
@@ -51,7 +51,7 @@ function Hero() {
           alignItems="center"
           color="#fff"
         >
-          <Typography variant="h3" component="h1" className={classes.title}>
+          <Typography variant="h3" component="h3" className={classes.title}>
             THE SOAP SHOP
           </Typography>
           <Typography variant="p" component="p" className={classes.title}>

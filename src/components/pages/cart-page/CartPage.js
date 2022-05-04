@@ -15,7 +15,7 @@ function CartPage() {
       <>
         <h1>Cart</h1>
         {
-          cartItems.length === 0 ? <div className="empty-cart">Your Cart is empty!</div> 
+          cartItems.length === 0 ? <div className="empty-cart">YOUR CART IS EMPTY </div> 
           : 
           <>
             <div className="cart-page">

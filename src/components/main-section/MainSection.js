@@ -1,6 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
-import aghaSoaps from '../../assets/making-soaps.jpg';
+import aghaSoaps from '../../assets/handsoaps.jpg';
 import './MainSection.styles.scss'
 
 function MainSection({ history }) {
