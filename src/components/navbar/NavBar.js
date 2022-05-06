@@ -22,11 +22,11 @@ function NavBar({ user, setUser }) {
     history.push('/signin')
   }
 
-  let button 
+  let toggleLogInOut 
   if (user) {
-    button = <button onClick={handleLogout}>LOGOUT</button>
+    toggleLogInOut = <Link onClick={handleLogout}>LOGOUT</Link>
   } else {
-    button = <button onClick={handleLogin}>LOGIN</button>
+    toggleLogInOut = <Link onClick={handleLogin}>LOGIN</Link>
   }
 
   return (
@@ -36,16 +36,16 @@ function NavBar({ user, setUser }) {
       </div>
       <ul>
         <li>
-        <Link to='/'>Home</Link>
+        <Link to='/'>HOME</Link>
         </li>
         <li>
-          <Link to='/shop'>Shop</Link>
+          <Link to='/shop'>SHOP</Link>
         </li>
         <li>
-          <Link to='/about'>About</Link>
+          <Link to='/about'>ABOUT</Link>
         </li>
         <li>
-          {button}
+          {toggleLogInOut}
         </li>
       </ul>
       <ShoppingCart />
