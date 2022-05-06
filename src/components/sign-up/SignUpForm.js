@@ -3,124 +3,185 @@ import { useHistory } from "react-router-dom";
 import Layout from '../shared/Layout';
 
 
-function SignUpForm({ onLogin }) {
+function SignUpForm({ setUser }) {
 
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordConfirmation, setPasswordConfirmation] = useState("");
-  const [email, setEmail] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [errors, setErrors] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+    password_confirmation: "",
+    email: "",
+    first_name: "",
+    last_name: ""
+  });
+  const [isSigningUp, setIsSigningUp] = useState(false);
 
-  const history = useHistory();
+  let history = useHistory()
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    setErrors([]);
-    setIsLoading(true);
-    fetch("http://localhost:3000/signup", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username,
-        password,
-        password_confirmation: passwordConfirmation,
-        email,
-        firstName,
-        lastName,
-      }),
-    }).then((r) => {
-      setIsLoading(false);
-      if (r.ok) {
-        r.json().then((user) => onLogin(user));
-        return history.push("/")
-      } else {
-        r.json().then((err) => setErrors(err.errors));
-      }
+  function handleFormChange(e) {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
     });
   }
 
+  function signInSuccess(user) {
+    setUser(user)
+    history.push("/")
+  }
 
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    if (isSigningUp) {
+      fetch("http://localhost:3000/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(res => res.json())
+      .then(user => signInSuccess(user));
+    } 
+    else {
+      fetch("http://localhost:3000/signin", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+      .then((r) => r.json())
+      .then(user => signInSuccess(user));
+      }
+    }
+
+  function handleSignUpStateChange() {
+    setIsSigningUp(!isSigningUp);
+  }
 
   return (
     <Layout>
       <div className='form container'>
-        <h1>S I G N - U P</h1>
-        <form onSubmit={handleSubmit}>
 
+      {isSigningUp?
+
+        <form onSubmit={handleFormSubmit}>
+          <h1>S I G N - U P</h1>
           <input
             type="text"
-            id="email"
+            name="email"
             placeholder='Email'
             autoComplete="off"
-            value={email}
+            value={formData.email}
             className='nomad-input'
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={handleFormChange}
           />
 
           <input
             type="text"
-            id="first_name"
+            name="first_name"
             placeholder='First Name'
             autoComplete="off"
-            value={firstName}
+            value={formData.first_name}
             className='nomad-input'
-            onChange={(e) => setFirstName(e.target.value)}
+            onChange={handleFormChange}
           />
 
           <input
             type="text"
-            id="last_name"
+            name="last_name"
             placeholder='Last Name'
             autoComplete="off"
-            value={lastName}
+            value={formData.last_name}
             className='nomad-input'
-            onChange={(e) => setLastName(e.target.value)}
+            onChange={handleFormChange}
           />    
 
           <input
             type="text"
-            id="username"
+            name="username"
             placeholder='Username'
             autoComplete="off"
-            value={username}
+            value={formData.username}
             className='nomad-input'
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={handleFormChange}
           />
 
           <input
             type="password"
-            id="password"
+            name="password"
             placeholder='Password'
-            value={password}
+            value={formData.password}
             className='nomad-input'
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={handleFormChange}
             autoComplete="current-password"
           />
 
           <input
             type="password"
-            id="password_confirmation"
+            name="password_confirmation"
             placeholder='Password Confirmation'
-            value={passwordConfirmation}
+            value={formData.password_confirmation}
             className='nomad-input'
-            onChange={(e) => setPasswordConfirmation(e.target.value)}
+            onChange={handleFormChange}
             autoComplete="current-password"
           />
 
           <div className="submit-btn">
-            <button className='button is-black nomad-btn submit' type="submit">{isLoading ? "Loading..." : "SIGN UP"}</button>
+            <button className='button is-black nomad-btn submit' type="submit">
+              SIGN UP
+            </button>
           </div>
 
-          <div className="error-message">
-            <p>{errors.message}</p>
+          <div className="submit-btn">
+            <button className='button is-black nomad-btn submit' type="submit" 
+            onClick={handleSignUpStateChange}>
+              Already have an account? Login
+            </button>
           </div>
 
         </form>
+
+        : 
+
+        <form onSubmit={handleFormSubmit}>
+          <h1>L O G I N</h1>
+
+          <input
+            type="text"
+            name="username"
+            placeholder='Username'
+            autoComplete="off"
+            value={formData.username}
+            className='nomad-input'
+            onChange={handleFormChange}
+          />
+
+          <input
+            type="password"
+            name="password"
+            placeholder='Password'
+            value={formData.password}
+            className='nomad-input'
+            onChange={handleFormChange}
+            autoComplete="current-password"
+          />
+
+          <div className="submit-btn">
+            <button className='button is-black nomad-btn submit' type="submit">
+              LOGIN
+            </button>
+          </div>
+
+          <div className="submit-btn">
+            <button className='button is-black nomad-btn submit' 
+            onClick={handleSignUpStateChange}>
+              Don't have an account? Sign up
+            </button>
+          </div>
+        </form>
+        }
+
       </div>
     </Layout>
   )

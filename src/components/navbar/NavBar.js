@@ -8,14 +8,25 @@ function NavBar({ user, setUser }) {
   const history = useHistory()
 
   function handleLogout() {
-    fetch("http://localhost:3000/logout", { 
-      method: "DELETE" 
-      }).then((r) => {
-      if (r.ok) {
-        setUser(null);
-        history.push('/')
-      }
-    });
+    fetch("http://localhost:3000/signout", { 
+      method: "DELETE", 
+      }).then(() => onLogout());
+  }
+
+  function onLogout() {
+    setUser(null)
+    history.push('/')
+  }
+
+  function handleLogin() {
+    history.push('/signin')
+  }
+
+  let button 
+  if (user) {
+    button = <button onClick={handleLogout}>LOGOUT</button>
+  } else {
+    button = <button onClick={handleLogin}>LOGIN</button>
   }
 
   return (
@@ -34,7 +45,7 @@ function NavBar({ user, setUser }) {
           <Link to='/about'>About</Link>
         </li>
         <li>
-          {!user ? <Link to="/signin">Login</Link> : <Link to="/logout" onClick={handleLogout}>Logout</Link>}
+          {button}
         </li>
       </ul>
       <ShoppingCart />

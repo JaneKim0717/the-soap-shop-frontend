@@ -6,9 +6,11 @@ import Shop from './components/pages/Shop';
 import SingleProduct from './components/single-product/SingleProduct';
 import CartPage from './components/pages/cart-page/CartPage';
 import NavBar from './components/navbar/NavBar';
-import SignIn from './components/sign-in/SignIn';
+// import SignIn from './components/sign-in/SignIn';
+import SignUpForm from './components/sign-up/SignUpForm';
 import AboutUs from './components/AboutUs';
 import './App.scss';
+
 
 
 
@@ -33,7 +35,7 @@ function App() {
       <NavBar user={user} setUser={setUser}/>  
         <Switch>
           <Route exact path='/'> 
-            <HomePage /> 
+            <HomePage user={user} /> 
           </Route>
 
           <Route exact path='/shop'> 
@@ -45,7 +47,7 @@ function App() {
           </Route> 
 
           <Route exact path='/signin'> 
-            <SignIn onLogin={setUser} /> 
+            <SignUpForm setUser={setUser} /> 
           </Route>
 
           <Route exact path='/product/:id'> 

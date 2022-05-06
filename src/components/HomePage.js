@@ -4,7 +4,10 @@ import Hero from './hero/Hero'
 import MainSection from './main-section/MainSection'
 import FeaturedCollection from './featured-collection/FeaturedCollection'
 
-function HomePage() {
+function HomePage({ user }) {
+
+  console.log(user)
+
   return (
     <>
       <Layout>
