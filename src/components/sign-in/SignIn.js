@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import SignInForm from './SignInForm';
 import SignUpForm from '../sign-up/SignUpForm';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import './SignIn.styles.scss'
 
 function SignIn({ onLogin }) {
@@ -13,12 +13,12 @@ function SignIn({ onLogin }) {
       {showLogin ? 
         <>
           <SignInForm onLogin={onLogin} />
-            <Link onClick={() => setShowLogin(false)}> Don't have an account? Sign Up </Link>
+            <button onClick={() => setShowLogin(false)}> Don't have an account? Sign Up </button>
         </>
       : 
         <>
           <SignUpForm onLogin={onLogin} />
-            <Link onClick={() => setShowLogin(true)}> Already have an account? Log In </Link>
+            <button onClick={() => setShowLogin(true)}> Already have an account? Log In </button>
         </>
       }
     </>

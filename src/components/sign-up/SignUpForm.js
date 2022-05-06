@@ -8,6 +8,9 @@ function SignUpForm({ onLogin }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  const [email, setEmail] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -26,6 +29,9 @@ function SignUpForm({ onLogin }) {
         username,
         password,
         password_confirmation: passwordConfirmation,
+        email,
+        firstName,
+        lastName,
       }),
     }).then((r) => {
       setIsLoading(false);
@@ -45,6 +51,36 @@ function SignUpForm({ onLogin }) {
       <div className='form container'>
         <h1>S I G N - U P</h1>
         <form onSubmit={handleSubmit}>
+
+          <input
+            type="text"
+            id="email"
+            placeholder='Email'
+            autoComplete="off"
+            value={email}
+            className='nomad-input'
+            onChange={(e) => setEmail(e.target.value)}
+          />
+
+          <input
+            type="text"
+            id="first_name"
+            placeholder='First Name'
+            autoComplete="off"
+            value={firstName}
+            className='nomad-input'
+            onChange={(e) => setFirstName(e.target.value)}
+          />
+
+          <input
+            type="text"
+            id="last_name"
+            placeholder='Last Name'
+            autoComplete="off"
+            value={lastName}
+            className='nomad-input'
+            onChange={(e) => setLastName(e.target.value)}
+          />    
 
           <input
             type="text"
