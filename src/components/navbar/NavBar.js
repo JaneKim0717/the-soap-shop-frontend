@@ -24,9 +24,9 @@ function NavBar({ user, setUser }) {
 
   let toggleLogInOut 
   if (user) {
-    toggleLogInOut = <Link onClick={handleLogout}>LOGOUT</Link>
+    toggleLogInOut = <Link to='/signout' onClick={handleLogout}>LOGOUT</Link>
   } else {
-    toggleLogInOut = <Link onClick={handleLogin}>LOGIN</Link>
+    toggleLogInOut = <Link to='/signin' onClick={handleLogin}>LOGIN</Link>
   }
 
   return (
