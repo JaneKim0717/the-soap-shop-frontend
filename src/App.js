@@ -9,7 +9,9 @@ import NavBar from './components/navbar/NavBar';
 // import SignIn from './components/sign-in/SignIn';
 import SignUpForm from './components/sign-up/SignUpForm';
 import AboutUs from './components/AboutUs';
+import Announcement from './components/Announcement';
 import './App.scss';
+
 
 
 
@@ -32,6 +34,7 @@ function App() {
 
   return (
     <div className="App">
+      <Announcement />
       <NavBar user={user} setUser={setUser}/>  
         <Switch>
           <Route exact path='/'> 

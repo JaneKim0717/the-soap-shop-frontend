@@ -3,6 +3,7 @@ import { Link, useHistory } from 'react-router-dom'
 import ShoppingCart from '../shopping-cart/ShoppingCart'
 import './NavBar.styles.scss'
 
+
 function NavBar({ user, setUser }) {
 
   const history = useHistory()
@@ -30,6 +31,7 @@ function NavBar({ user, setUser }) {
   }
 
   return (
+
     <nav className='nav-menu container'>
       <div className='logo'>
         <Link to='/'>THE SOAP SHOP</Link>
