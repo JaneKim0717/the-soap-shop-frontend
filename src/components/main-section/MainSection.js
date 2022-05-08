@@ -48,6 +48,7 @@ const Header = styled.h1`
     color:black;
     letter-spacing: 2px;
     margin-top: 80px;
+    margin-bottom: 20px
 `;
 
 const Paragraph = styled.div`
@@ -84,7 +85,7 @@ function MainSection() {
       </Container>
 
       <Container>
-        <Image src="https://i.imgur.com/qFAtY8D.png" />
+        <Image src="https://i.imgur.com/yLGgKgx.png" />
         <Info>
           <Title>BUTTER BOMB</Title>
           <Paragraph>Hydrating & Nourishing Bath. Our Butter Bomb contains 2 grams of cocoa butter, adding extra hydration to your bath. Scented with relaxing lavender and ylang ylang essential oils.</Paragraph>

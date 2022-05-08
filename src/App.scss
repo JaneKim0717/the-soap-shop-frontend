@@ -70,6 +70,12 @@ h3 {
 
 //black button styles
 .nomad-btn {
+  border:none;
+  padding: 10px;
+  background-color: black;
+  color:white;
+  cursor: pointer;
+  font-weight: 600;
   display: block;
   width: 100%;
   line-height: 1.4;

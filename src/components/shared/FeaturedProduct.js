@@ -2,7 +2,27 @@ import React, { useContext } from 'react'
 import { withRouter } from 'react-router-dom';
 import { isInCart } from '../../Helpers';
 import { CartContext } from '../../context/CartContext';
+import styled from "styled-components";
 import './FeaturedProduct.styles.scss'
+
+
+const Button = styled.button`
+    border:none;
+    padding: 10px;
+    background-color: black;
+    color:white;
+    cursor: pointer;
+    font-weight: 600;
+    display: block;
+    width: 100%;
+    line-height: 1.4;
+    padding-left: 5px;
+    padding-right: 5px;
+    white-space: normal;
+    margin-top: 0;
+    margin-bottom: 10px;
+    min-height: 44px;
+`;
 
 function FeaturedProduct(props) {
 
@@ -21,17 +41,17 @@ function FeaturedProduct(props) {
         <p>${price}.00</p>
         {
           !itemInCart &&
-          <button className='button is-black nomad-btn' 
+          <Button
           onClick={() => addProduct(product)}>
             ADD TO CART
-          </button>
+          </Button>
         }
         {
           itemInCart &&
-          <button className='button is-white nomad-btn' id='btn-white-outline' 
+          <Button className='button is-white' 
           onClick={() => increase(product)}>
             ADD MORE
-          </button>
+          </Button>
         }
       </div>
     </div>
