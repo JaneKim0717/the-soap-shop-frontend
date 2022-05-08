@@ -19,10 +19,9 @@ function AboutUs() {
     <Layout>
     <div className='main-section-container'>
     <Header>OUR STORY</Header>
+    <img className='ms-m-image' src='https://i.imgur.com/Rj7FA6s.png' alt='welcome'/>
       <div className='main-section-middle'>
-      <img className='ms-m-image' src='https://i.imgur.com/Rj7FA6s.png' alt='welcome'/>
-
-      <div className='ms-m-description'>
+        <div className='ms-m-description'>
           <h2 className='welcome-titles'>WE ARE THE SOAP SHOP</h2>
           <p className='ms-m-description'>
             We are a small team of natural skincare & self-care enthusiasts - committed to bringing you the best quality products that you can confidently incorporate into your self-care routine.

@@ -10,6 +10,9 @@ import NavBar from './components/navbar/NavBar';
 import SignUpForm from './components/sign-up/SignUpForm';
 import AboutUs from './components/AboutUs';
 import Announcement from './components/Announcement';
+import Checkout from './components/checkout/Checkout';
+import Success from './components/checkout/stripe-checkout/Success';
+import Canceled from './components/checkout/stripe-checkout/Canceled';
 import './App.scss';
 
 
@@ -59,6 +62,18 @@ function App() {
 
           <Route exact path='/cart'> 
             <CartPage /> 
+          </Route> 
+
+          <Route exact path='/checkout'> 
+            <Checkout /> 
+          </Route> 
+
+          <Route exact path='/success'> 
+            <Success /> 
+          </Route> 
+
+          <Route exact path='/canceled'> 
+            <Canceled /> 
           </Route> 
 
           <Route exact path='*'> 

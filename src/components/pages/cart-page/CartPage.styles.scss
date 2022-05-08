@@ -12,8 +12,8 @@ h1 {
 .cart-item {
   text-align: center;
   border: 1px solid #ccc;
-  margin: 2rem;
-  padding: 1rem;
+  margin: 1rem;
+  padding: 0.5rem;
 
   .item-image {
     img {
@@ -58,6 +58,7 @@ h1 {
     margin: 2rem;
     text-align: center;
   }
+
 }
 
 @media(min-width: 1024px) {

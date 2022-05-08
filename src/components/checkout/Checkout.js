@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
-import { CartContext } from "../../context/cart-context";
-import Layout from "../shared/layout"; 
-import PaymentForm from "./PaymentForm";
+import { CartContext } from "../../context/CartContext";
+import Layout from "../shared/Layout";
+import StripeCheckout from "./stripe-checkout/StripeCheckout";
+import './Checkout.styles.scss';
+
 
 function Checkout() {
   const { itemCount, total } = useContext(CartContext);
@@ -11,9 +13,8 @@ function Checkout() {
       <div className="checkout">
         <h2> Checkout Summary </h2>
         <h3>{`Total Items: ${itemCount}`}</h3>
-        <h3>{`Total Amount Due: $${total}.00`}</h3>
-        {/* <StripeCheckout /> */}
-        <PaymentForm />
+        <h3>{`Total Amount: $${total}.00`}</h3>
+        <StripeCheckout />
       </div>
     </Layout>
   )
