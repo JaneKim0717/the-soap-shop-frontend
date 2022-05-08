@@ -1,13 +1,13 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import ReactPlayer from "react-player";
 import heroVideo from '../../assets/heroVideo.mp4'
-
 import Box from '@material-ui/core/Box';
-import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from "@material-ui/core";
+import styled from 'styled-components'
 import './Hero.styles.scss';
-import { useHistory } from 'react-router-dom';
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -30,6 +30,15 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: theme.spacing(4),
   },
 }));
+
+const Button = styled.button`
+    border:none;
+    padding: 10px;
+    background-color: white;
+    color:gray;
+    cursor: pointer;
+    font-weight: 600;
+`;
 
 function Hero() {
   const classes = useStyles();
@@ -60,7 +69,7 @@ function Hero() {
           <Typography variant="p" component="p" className={classes.title}>
             SELFCARE & WELLNESS
           </Typography>
-          <Button color="black" variant="contained" onClick={() => history.push('/shop')}>
+          <Button onClick={() => history.push('/shop')}>
             SHOP NOW
           </Button>
         </Box>

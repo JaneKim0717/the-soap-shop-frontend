@@ -2,8 +2,6 @@ import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
 import styled from 'styled-components'
-// import { mainCards } from '../../data'
-// import aghaSoaps from '../../assets/making-soaps.jpg';
 import './MainSection.styles.scss'
 
 
@@ -25,6 +23,7 @@ const Image = styled.img`
   width: 100%;
   height: 100%;
   opacity: 1;
+  filter: brightness(80%);
   object-fit: cover;
 `;
 
@@ -41,7 +40,7 @@ const Info = styled.div`
 `;
 
 const Title = styled.h1`
-    color:black;
+    color:white;
     margin-bottom: 20px;
 `;
 
@@ -52,7 +51,7 @@ const Header = styled.h1`
 `;
 
 const Paragraph = styled.div`
-    color:black;
+    color:white;
     font-size: large;
     margin-bottom: 20px;
     width: 500px;
@@ -104,54 +103,6 @@ function MainSection() {
     </OuterContainer>
   </>
 
-
-
-
-
-
-
-
-
-
-
-    // <div className='main-section-container'>
-    //   <div className='main-section-middle'>
-    //     <div className='ms-m-image'>
-    //       <img src={aghaSoaps} alt='bath bomb' />
-    //     </div>
-    //     <div className='ms-m-description'>
-    //       <h1 className='welcome-main-section'>
-    //         WELCOME TO THE SOAP SHOP
-    //       </h1>
-
-    //       <h3 className='welcome-titles'>  M I S S I O N  </h3>
-    //       <p>
-    //         Our products are handmade in small batches with natural and fresh ingredients. We strive to bring you joyful experiences and effective results by incorporating our products into your self-care routine.
-    //       </p>
-
-    //       <h3 className='welcome-titles'>  S I M P L E  </h3>
-    //       <p>
-    //           We believe that keeping our ingredients simple is the most effective way to reduce unwanted irritation from a product. We always choose safe, effective and high-quality ingredients suitable for each formula to bring you the best result.
-    //       </p>
-
-    //       <h3 className='welcome-titles'>  N A T U R A L  </h3>
-    //       <p>
-    //         We believe in the healing powers of natural botanicals. We always incorporate effective and high-quality natural ingredients into our products.
-    //       </p>
-
-    //       <h3 className='welcome-titles'>  E A R T H - C E N T E R E D  </h3>
-    //       <p>
-    //         We believe it's imperative to minimize our impact on the environment. We are committed to reducing plastic waste and protecting the Earth at every part of our business, from production and shipping to our end products.
-    //       </p>
-
-    //       <div className='ms-shop-all-bttn'>
-    //         <button className='button is-black' id='shop-now' onClick={()=> history.push('/shop')} >
-    //           SHOP ALL PRODUCTS
-    //         </button>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
   )
 }
 
