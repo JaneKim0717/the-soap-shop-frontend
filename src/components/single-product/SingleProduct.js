@@ -4,7 +4,26 @@ import { ProductsContext } from '../../context/ProductsContext'
 import { CartContext }from '../../context/CartContext'
 import { isInCart } from '../../Helpers'
 import Layout from '../shared/Layout'
+import styled from "styled-components";
 import './SingleProduct.styles.scss'
+
+const Button = styled.button`
+    border:none;
+    padding: 10px;
+    background-color: #44403c;
+    color:white;
+    cursor: pointer;
+    font-weight: 600;
+    display: block;
+    width: 100%;
+    line-height: 1.4;
+    padding-left: 5px;
+    padding-right: 5px;
+    white-space: normal;
+    margin-top: 0;
+    margin-bottom: 10px;
+    min-height: 44px;
+`;
 
 function SingleProduct({match, history: { push } }) {
 
@@ -43,21 +62,21 @@ function SingleProduct({match, history: { push } }) {
           <div className='add-to-cart-btns'>
             {
               !itemInCart &&             
-              <button className='button is-white nomad-btn' id='btn-white-outline' 
+              <Button  
               onClick={() => addProduct(product)}>
                 ADD TO CART
-              </button>
+              </Button>
             }
             {
               itemInCart &&             
-              <button className='button is-white nomad-btn' id='btn-white-outline' 
+              <Button  
               onClick={() => increase(product)}>
                 ADD MORE
-              </button>
+              </Button>
             }
-            <button className='button is-black nomad-btn' id='btn-white-outline'>
+            <Button>
               PROCEED TO CHECKOUT
-            </button>
+            </Button>
           </div>
           <div className='product-description'>
             <p>DESCRIPTION: {description}</p>
