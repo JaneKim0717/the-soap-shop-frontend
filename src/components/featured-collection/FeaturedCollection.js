@@ -12,7 +12,7 @@ function FeaturedCollection() {
 
   return (
     <div className="featured-collection container">
-      <h2 className="featured-section-title">FEATURED PRODUCTS</h2>
+      <h2 className="featured-section-title">FEATURED COLLECTION</h2>
       <div className="products">
         {
           productItems

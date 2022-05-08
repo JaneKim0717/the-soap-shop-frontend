@@ -2,10 +2,12 @@ import React from 'react';
 import ReactPlayer from "react-player";
 import heroVideo from '../../assets/heroVideo.mp4'
 
-import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from "@material-ui/core";
 import './Hero.styles.scss';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -31,6 +33,7 @@ const useStyles = makeStyles(theme => ({
 
 function Hero() {
   const classes = useStyles();
+  let history = useHistory()
 
   return (
     <section className={classes.root}>
@@ -57,6 +60,9 @@ function Hero() {
           <Typography variant="p" component="p" className={classes.title}>
             SELFCARE & WELLNESS
           </Typography>
+          <Button color="black" variant="contained" onClick={() => history.push('/shop')}>
+            SHOP NOW
+          </Button>
         </Box>
       </div>
     </section>
