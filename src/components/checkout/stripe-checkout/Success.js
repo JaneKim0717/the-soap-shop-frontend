@@ -5,9 +5,11 @@ import { CartContext } from '../../../context/CartContext'
 
 function Success({ history }) {
 
-  const { clearCart } = useContext(CartContext);
+  const { clearCart, cartItems } = useContext(CartContext);
 
-  useEffect(clearCart, [clearCart]);
+  useEffect(() => {
+    if (cartItems.length !==0) { clearCart() }
+  }, [clearCart, cartItems]);
 
 
   return (
