@@ -2,6 +2,35 @@ import React, { useContext, useState } from 'react'
 import { useStripe } from '@stripe/react-stripe-js'
 import { CartContext } from '../../../context/CartContext'
 import { fetchFromAPI } from '../../../Helpers'
+import styled from "styled-components";
+
+
+const Button = styled.button`
+    border:none;
+    padding: 10px;
+    background-color: #44403c;
+    color:white;
+    cursor: pointer;
+    font-weight: 600;
+    display: block;
+    width: 400px;
+    line-height: 1.4;
+    padding-left: 5px;
+    padding-right: 5px;
+    white-space: normal;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    min-height: 44px;
+`;
+
+const Input = styled.input`
+  flex: 1;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  margin-bottom: 0.5rem;
+  border: 1px solid #ccc;
+`;
 
 function StripeCheckout() {
 
@@ -43,18 +72,18 @@ function StripeCheckout() {
   return (
     <form onSubmit={handleGuestCheckout}>
       <div>
-        <input 
+        <Input 
           type='email'
           onChange={e => setEmail(e.target.value)}
-          placeholder='Email'
+          placeholder='EMAIL'
           value={email}
           className='nomad-input'
         />
       </div>
       <div className='submit-btn'>
-        <button type='submit' className='button is-black nomad-btn submit'>
-          Checkout
-        </button>
+        <Button type='submit'>
+          PROCEED TO CHECKOUT
+        </Button>
       </div>
     </form>
   )
