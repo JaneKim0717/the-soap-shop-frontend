@@ -20,9 +20,10 @@ const Summary = styled.div`
 `;
 
 const SummaryTitle = styled.h1`
-  font-weight: 300;
+  font-weight: bold;
   margin-bottom: 50px;
   text-align: center;
+  letter-spacing: 1px;
 `;
 
 const SummaryItem = styled.div`
