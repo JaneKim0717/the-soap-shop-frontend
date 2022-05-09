@@ -29,7 +29,7 @@ const Container = styled.div`
       rgba(255, 255, 255, 0.5),
       rgba(255, 255, 255, 0.5)
     ),
-    url("https://images.pexels.com/photos/6683018/pexels-photo-6683018.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+    url("https://images.pexels.com/photos/5764081/pexels-photo-5764081.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
       center;
   background-size: cover;
   display: flex;
@@ -61,6 +61,7 @@ const Input = styled.input`
   margin: 10px 0;
   padding: 10px;
   margin-bottom: 1rem;
+  border: 1px solid #ccc;
 `;
 
 
