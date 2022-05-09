@@ -66,7 +66,7 @@ function Hero() {
           <Typography variant="h3" component="h3" className={classes.title}>
             THE SOAP SHOP
           </Typography>
-          <Typography variant="p" component="p" className={classes.title}>
+          <Typography variant="h5" component="h5" className={classes.title}>
             SELFCARE & WELLNESS
           </Typography>
           <Button onClick={() => history.push('/shop')}>

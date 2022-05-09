@@ -7,7 +7,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ProductsContextProvider from './context/ProductsContext'
 import CartContextProvider from './context/CartContext'
-import store from './components/Store';
+import store from './Store';
 import { Elements } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
 

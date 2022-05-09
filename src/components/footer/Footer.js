@@ -11,7 +11,7 @@ import styled from "styled-components";
 const Container = styled.div`
   display: flex;
   margin-top: 80px;
-  background-color: #a8a29e;
+  background-color: #44403c;
 `;
 
 const Left = styled.div`
@@ -21,14 +21,14 @@ const Left = styled.div`
   padding: 20px;
 `;
 
-const Logo = styled.div`
-  text-alight: left;
-  font-weight: bold;
-  font-size: 1.5rem;
-  flex: 1;
-  padding: 20px;
-  color: white;
-`;
+// const Logo = styled.div`
+//   text-alight: left;
+//   font-weight: bold;
+//   font-size: 1.5rem;
+//   flex: 1;
+//   padding: 20px;
+//   color: white;
+// `;
 
 const Desc = styled.div`
   margin: 10px 0px;

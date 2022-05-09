@@ -3,6 +3,7 @@ import Layout from './shared/Layout'
 import Hero from './hero/Hero'
 import MainSection from './main-section/MainSection'
 import FeaturedCollection from './featured-collection/FeaturedCollection'
+import MainSectionBottom from './main-section/MainSectionBottom'
 
 
 function HomePage({ user }) {
@@ -15,6 +16,7 @@ function HomePage({ user }) {
         <Hero />
         <MainSection />
         <FeaturedCollection />
+        <MainSectionBottom />
       </Layout>
     </>
   )

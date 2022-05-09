@@ -9,8 +9,8 @@ import './FeaturedProduct.styles.scss'
 const Button = styled.button`
     border:none;
     padding: 10px;
-    background-color: #44403c;
-    color:white;
+    background-color: #f5f5f4;
+    color:black;
     cursor: pointer;
     font-weight: 600;
     display: block;

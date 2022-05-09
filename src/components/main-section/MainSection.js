@@ -12,6 +12,13 @@ const OuterContainer = styled.div`
   justify-content: space-between;
 `;
 
+const OuterContainerTwo = styled.div`
+display: flex;
+padding: 20px;
+margin-top: -40px;
+justify-content: space-between;
+`;
+
 const Container = styled.div`
   flex: 1;
   margin: 3px;
@@ -102,6 +109,25 @@ function MainSection() {
         </Info>
       </Container>
     </OuterContainer>
+
+    <OuterContainerTwo>
+      <Container>
+        <Image src="https://i.imgur.com/14l7gj8.jpg" />
+        <Info>
+          <Title>LOVE SELFCARE GIFTSET</Title>
+          <Paragraph>This Love Self Care Kit is to help you relax and find balance in life with some well-deserved self-care time. Perfect as a gift for you and your loved ones.</Paragraph>
+          <Button onClick={() => history.push('/product/16')}>SHOP</Button>
+        </Info>
+      </Container>
+      <Container>
+        <Image src="https://i.imgur.com/PP8HJRL.png" />
+        <Info>
+          <Title>COASTAL WOODS ROOM + LINEN SPRAY</Title>
+          <Paragraph>Scented with beautifully hand-blended pure essential oils of refreshing fir needle and rich forest aroma of pine and cedarwood.</Paragraph>
+          <Button onClick={() => history.push('/product/19')}>SHOP</Button>
+        </Info>
+      </Container>
+    </OuterContainerTwo>
   </>
 
   )
