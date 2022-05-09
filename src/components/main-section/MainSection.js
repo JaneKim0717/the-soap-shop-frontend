@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import './MainSection.styles.scss'
 
 
-
 const OuterContainer = styled.div`
   display: flex;
   padding: 20px;

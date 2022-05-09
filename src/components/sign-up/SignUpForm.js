@@ -133,7 +133,7 @@ function SignUpForm({ setUser }) {
             <Input 
               type="text"
               name="email"
-              placeholder='Email'
+              placeholder='EMAIL'
               autoComplete="off"
               value={formData.email}
               onChange={handleFormChange}
@@ -142,7 +142,7 @@ function SignUpForm({ setUser }) {
             <Input
               type="text"
               name="first_name"
-              placeholder='First Name'
+              placeholder='FIRST NAME'
               autoComplete="off"
               value={formData.first_name}
               onChange={handleFormChange}
@@ -151,7 +151,7 @@ function SignUpForm({ setUser }) {
             <Input
               type="text"
               name="last_name"
-              placeholder='Last Name'
+              placeholder='LAST NAME'
               autoComplete="off"
               value={formData.last_name}
               onChange={handleFormChange}
@@ -160,7 +160,7 @@ function SignUpForm({ setUser }) {
             <Input
               type="text"
               name="username"
-              placeholder='Username'
+              placeholder='USERNAME'
               autoComplete="off"
               value={formData.username}
               onChange={handleFormChange}
@@ -169,7 +169,7 @@ function SignUpForm({ setUser }) {
             <Input
               type="password"
               name="password"
-              placeholder='Password'
+              placeholder='PASSWORD'
               value={formData.password}
               onChange={handleFormChange}
               autoComplete="current-password"
@@ -178,7 +178,7 @@ function SignUpForm({ setUser }) {
             <Input
               type="password"
               name="password_confirmation"
-              placeholder='Password Confirmation'
+              placeholder='PASSWORD CONFIRMATION'
               value={formData.password_confirmation}
               onChange={handleFormChange}
               autoComplete="current-password"
@@ -202,7 +202,7 @@ function SignUpForm({ setUser }) {
             <Input
               type="text"
               name="username"
-              placeholder='Username'
+              placeholder='USERNAME'
               autoComplete="off"
               value={formData.username}
               onChange={handleFormChange}
@@ -211,7 +211,7 @@ function SignUpForm({ setUser }) {
             <Input
               type="password"
               name="password"
-              placeholder='Password'
+              placeholder='PASSWORD'
               value={formData.password}
               onChange={handleFormChange}
               autoComplete="current-password"
