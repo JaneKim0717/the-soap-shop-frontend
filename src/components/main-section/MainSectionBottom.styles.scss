@@ -2,6 +2,7 @@
     height: 100%;
     width: 50%;
     object-fit: cover;
+    filter: brightness(90%);
   }
 
   .main-section-bottom-right {
@@ -52,6 +53,7 @@
     width: 50%;
     object-fit: cover;
     text-align: right;
+    filter: brightness(90%);
   }
 
   .main-section-bottom-left {
@@ -61,6 +63,7 @@
     text-align: right;
     height: 900px;
     width: 100%;
+    margin-bottom: 0px;
 
     .ms-m-description-left {
       height: 200px;
