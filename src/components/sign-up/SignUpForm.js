@@ -1,6 +1,67 @@
 import React, { useState } from 'react'
 import { useHistory } from "react-router-dom";
+import styled from "styled-components";
 import Layout from '../shared/Layout';
+
+
+const Button = styled.button`
+    border:none;
+    padding: 10px;
+    background-color: #f5f5f4;
+    color:black;
+    cursor: pointer;
+    font-weight: 600;
+    display: block;
+    width: 300px;
+    line-height: 1.4;
+    padding-left: 5px;
+    padding-right: 5px;
+    white-space: normal;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    min-height: 44px;
+`;
+
+const Container = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("https://images.pexels.com/photos/6683018/pexels-photo-6683018.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+      center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Wrapper = styled.div`
+  width: 30%;
+  padding: 20px;
+  background-color: white;
+  text-align: center;
+`;
+
+const Title = styled.h1`
+  font-size: 24px;
+  font-weight: 300;
+`;
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Input = styled.input`
+  flex: 1;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  margin-bottom: 1rem;
+`;
 
 
 function SignUpForm({ setUser }) {
@@ -61,128 +122,114 @@ function SignUpForm({ setUser }) {
 
   return (
     <Layout>
-      <div className='form container'>
+      <Container>
+        <Wrapper>
 
-      {isSigningUp?
+        {isSigningUp?
 
-        <form onSubmit={handleFormSubmit}>
-          <h1>S I G N - U P</h1>
-          <input
-            type="text"
-            name="email"
-            placeholder='Email'
-            autoComplete="off"
-            value={formData.email}
-            className='nomad-input'
-            onChange={handleFormChange}
-          />
+          <Form onSubmit={handleFormSubmit}>
+          <Title>S I G N - U P</Title>
+            <Input 
+              type="text"
+              name="email"
+              placeholder='Email'
+              autoComplete="off"
+              value={formData.email}
+              onChange={handleFormChange}
+            />
 
-          <input
-            type="text"
-            name="first_name"
-            placeholder='First Name'
-            autoComplete="off"
-            value={formData.first_name}
-            className='nomad-input'
-            onChange={handleFormChange}
-          />
+            <Input
+              type="text"
+              name="first_name"
+              placeholder='First Name'
+              autoComplete="off"
+              value={formData.first_name}
+              onChange={handleFormChange}
+            />
 
-          <input
-            type="text"
-            name="last_name"
-            placeholder='Last Name'
-            autoComplete="off"
-            value={formData.last_name}
-            className='nomad-input'
-            onChange={handleFormChange}
-          />    
+            <Input
+              type="text"
+              name="last_name"
+              placeholder='Last Name'
+              autoComplete="off"
+              value={formData.last_name}
+              onChange={handleFormChange}
+            />    
 
-          <input
-            type="text"
-            name="username"
-            placeholder='Username'
-            autoComplete="off"
-            value={formData.username}
-            className='nomad-input'
-            onChange={handleFormChange}
-          />
+            <Input
+              type="text"
+              name="username"
+              placeholder='Username'
+              autoComplete="off"
+              value={formData.username}
+              onChange={handleFormChange}
+            />
 
-          <input
-            type="password"
-            name="password"
-            placeholder='Password'
-            value={formData.password}
-            className='nomad-input'
-            onChange={handleFormChange}
-            autoComplete="current-password"
-          />
+            <Input
+              type="password"
+              name="password"
+              placeholder='Password'
+              value={formData.password}
+              onChange={handleFormChange}
+              autoComplete="current-password"
+            />
 
-          <input
-            type="password"
-            name="password_confirmation"
-            placeholder='Password Confirmation'
-            value={formData.password_confirmation}
-            className='nomad-input'
-            onChange={handleFormChange}
-            autoComplete="current-password"
-          />
+            <Input
+              type="password"
+              name="password_confirmation"
+              placeholder='Password Confirmation'
+              value={formData.password_confirmation}
+              onChange={handleFormChange}
+              autoComplete="current-password"
+            />
 
-          <div className="submit-btn">
-            <button className='button is-black nomad-btn submit' type="submit">
-              SIGN UP
-            </button>
-          </div>
+              <Button type="submit">
+                SIGN UP
+              </Button>
 
-          <div className="submit-btn">
-            <button className='button is-black nomad-btn submit' type="submit" 
-            onClick={handleSignUpStateChange}>
-              Already have an account? Login
-            </button>
-          </div>
+              <Button type="submit" 
+              onClick={handleSignUpStateChange}>
+                Already have an account? Login
+              </Button>
+          </Form>
 
-        </form>
+          : 
 
-        : 
+          <Form onSubmit={handleFormSubmit}>
+            <Title>L O G I N</Title>
 
-        <form onSubmit={handleFormSubmit}>
-          <h1>L O G I N</h1>
+            <Input
+              type="text"
+              name="username"
+              placeholder='Username'
+              autoComplete="off"
+              value={formData.username}
+              onChange={handleFormChange}
+            />
 
-          <input
-            type="text"
-            name="username"
-            placeholder='Username'
-            autoComplete="off"
-            value={formData.username}
-            className='nomad-input'
-            onChange={handleFormChange}
-          />
+            <Input
+              type="password"
+              name="password"
+              placeholder='Password'
+              value={formData.password}
+              onChange={handleFormChange}
+              autoComplete="current-password"
+            />
 
-          <input
-            type="password"
-            name="password"
-            placeholder='Password'
-            value={formData.password}
-            className='nomad-input'
-            onChange={handleFormChange}
-            autoComplete="current-password"
-          />
+              <Button>
+                LOGIN
+              </Button>
 
-          <div className="submit-btn">
-            <button className='button is-black nomad-btn submit' type="submit">
-              LOGIN
-            </button>
-          </div>
+              <Button  
+              onClick={handleSignUpStateChange}>
+                Don't have an account? Sign up
+              </Button>
 
-          <div className="submit-btn">
-            <button className='button is-black nomad-btn submit' 
-            onClick={handleSignUpStateChange}>
-              Don't have an account? Sign up
-            </button>
-          </div>
-        </form>
-        }
+          </Form>
+          }
 
-      </div>
+        </Wrapper>
+      </Container>
     </Layout>
   )
 }
