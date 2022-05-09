@@ -37,15 +37,15 @@ const Title = styled.h1`
 `;
 
 const CheckoutSummayText = styled.h3`
-  font-size: 1.3em;
+  font-size: 1.5em;
   color:white;
-  letter-spacing: 2px;
+  // letter-spacing: 2px;
 `;
 
 const CheckoutSummaryPrice = styled.h2`
-  font-size: 1.3em;
+  font-size: 1.5em;
   color:white;
-  letter-spacing: 2px;
+  // letter-spacing: 2px;
 `;
 
 function Checkout() {

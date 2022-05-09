@@ -88,7 +88,7 @@ function Total({ itemCount, total, history, clearCart }) {
               <div className="total-container">
 
               <SummaryItem>
-                <SummaryItemText>ITEM COUNT:</SummaryItemText>
+                <SummaryItemText>TOTAL ITEMS:</SummaryItemText>
                 <SummaryItemPrice>{itemCount}</SummaryItemPrice>
               </SummaryItem>
 

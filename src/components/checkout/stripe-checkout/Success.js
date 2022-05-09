@@ -65,7 +65,7 @@ function Success({ history }) {
       <Container>
         <Wrapper>
           <div className='checkout'>
-            <Title>THANK YOU! </Title>
+            <Title>THANK YOU</Title>
             <SuccessMessage>Your payment was successful! We are currently processing your order, you will receive a confirmation email shortly.</SuccessMessage>
             <div>
               <Button onClick={() => history.push('/shop')}>
