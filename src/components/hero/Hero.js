@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import ReactPlayer from "react-player";
-import heroVideo from '../../assets/heroVideo.mp4'
+import heroVideo from '../../assets/bath-hero.mp4'
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from "@material-ui/core";
@@ -28,6 +28,7 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     paddingBottom: theme.spacing(4),
+    letterSpacing: 6,
   },
 }));
 
@@ -66,7 +67,7 @@ function Hero() {
           <Typography variant="h3" component="h3" className={classes.title}>
             THE SOAP SHOP
           </Typography>
-          <Typography variant="h5" component="h5" className={classes.title}>
+          <Typography variant="p" component="p" className={classes.title}>
             SELFCARE & WELLNESS
           </Typography>
           <Button onClick={() => history.push('/shop')}>
