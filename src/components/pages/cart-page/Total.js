@@ -1,11 +1,11 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
 
+
 function Total({ itemCount, total, history, clearCart }) {
   return (
     <div className='order-summary'>
       <div className="total-container">
-        <h2>ORDER SUMMARY</h2>
         <div className="total">
           <h3>Total Items: {itemCount}</h3>
           <h3>{`Total Amount: $${total}.00`}</h3>

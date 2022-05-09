@@ -1,9 +1,9 @@
 import React from 'react'
-// import { PlusCircleIcon, MinusCircleIcon, TrashIcon } from "../../icons/Icons";
-
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+
+
 
 function CartItems(props) {
 
@@ -12,45 +12,33 @@ function CartItems(props) {
 
 
   return (
-    <div className="cart-item">
-      <div className="item-image">
-        <img src={image} alt='product'/>
-      </div>
-      <div className="name-price">
-        <h4>{name}</h4>
-        <p>${price}.00</p>
-      </div>
-      <div className="quantity">
-        <p>{`QUANTITY: ${quantity}`}</p>
-      </div>
-      <div className="btns-container">
-        <button className="btn-increase" onClick={() => increase(product)}>
-          <AddIcon width='20px' />
-        </button>
-
-        <button className="btn-decrease" onClick={() => decrease(product)} >
-          <RemoveIcon width='20px' />
-        </button>
-
-        <button className="btn-trash" onClick={() => removeProduct(product)}>
-          <DeleteOutlineIcon width='20px' />
-        </button>
-
-
-        {/* {
-          quantity === 1 && 
-          <button className="btn-trash" onClick={() => removeProduct(product)}>
-            <TrashIcon width='20px' />
+    <>
+      <div className="cart-item">
+        <div className="item-image">
+          <img src={image} alt='product'/>
+        </div>
+        <div className="name-price">
+          <h4>{name}</h4>
+          <p>${price}.00</p>
+        </div>
+        <div className="quantity">
+          <p>{`QUANTITY: ${quantity}`}</p>
+        </div>
+        <div className="btns-container">
+          <button className="btn-increase" onClick={() => increase(product)}>
+            <AddIcon width='20px' />
           </button>
-        }
-        {
-          quantity > 1 && 
+
           <button className="btn-decrease" onClick={() => decrease(product)} >
-            <MinusCircleIcon width='20px' />
+            <RemoveIcon width='20px' />
           </button>
-        } */}
+
+          <button className="btn-trash" onClick={() => removeProduct(product)}>
+            <DeleteOutlineIcon width='20px' />
+          </button>
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 

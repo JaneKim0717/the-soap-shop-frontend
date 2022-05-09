@@ -18,6 +18,10 @@ const Button = styled.button`
     margin-top: 30px;
 `;
 
+const Container = styled.div`
+  margin-bottom: 10rem;
+`;
+
 function CartPage() {
 
   const {cartItems, itemCount, total, increase, decrease, removeProduct, clearCart} = useContext(CartContext);
@@ -27,7 +31,7 @@ function CartPage() {
 
   return (
     <Layout>
-      <>
+      <Container>
         <h1>C A R T</h1>
         {
           cartItems.length === 0 ? 
@@ -49,7 +53,7 @@ function CartPage() {
             </div>
           </>
         }
-      </>
+      </Container>
     </Layout>
   )
 }

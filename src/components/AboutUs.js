@@ -18,10 +18,10 @@ function AboutUs() {
     <Layout>
       <div className='main-section-container'>
       <Header>OUR STORY</Header>
-      <img className='ms-m-image' src='https://i.imgur.com/8knQaBg.png?2' alt='welcome'/>
+      <img className='ms-m-image' src='https://i.imgur.com/Rj7FA6s.png?1' alt='welcome'/>
         <div className='main-section-middle'>
           <div className='ms-m-description'>
-            <h2 className='welcome-titles'>THE SOAP SHOP</h2>
+            <h2 className='welcome-titles'>ABOUT US</h2>
             <p className='ms-m-description'>
               We are a small team of natural skincare & self-care enthusiasts - committed to bringing you the best quality products that you can confidently incorporate into your self-care routine.
             </p>
