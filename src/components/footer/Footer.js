@@ -102,6 +102,9 @@ const Footer = () => {
         <Desc>
           We love seeing our products on social media. Share and tag us! @thesoapshop
         </Desc>
+        <Desc>
+          © THE SOAP SHOP BY JANE KIM
+        </Desc>
 
         <SocialContainer>
           <SocialIcon color="3B5999">
@@ -114,22 +117,19 @@ const Footer = () => {
             <PinterestIcon />
           </SocialIcon>
         </SocialContainer>
-        <Desc>
-          ©JANE KIM
-        </Desc>
       </Left>
       <Center>
         <Title>MENU</Title>
         <List>
-          <ListItem>Home</ListItem>
+          <ListItem>HOME</ListItem>
 
-          <ListItem>Shop All Products</ListItem>
+          <ListItem>SHOP ALL PRODUCTS</ListItem>
 
-          <ListItem>Shipping Info</ListItem>
+          <ListItem>SHIPPING INFO</ListItem>
   
-          <ListItem>Refund Policy</ListItem>
+          <ListItem>REFUND POLICY</ListItem>
 
-          <ListItem>Terms of Service</ListItem>
+          <ListItem>TERMS OF SERVICE</ListItem>
 
         </List>
       </Center>

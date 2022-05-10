@@ -15,14 +15,14 @@ const FilterWrap = styled.div`
 const FilterText = styled.span`
   font-size: 15px;
   font-weight: 600;
-	margin-left: 160px;
-  margin-right: 10px;
+	margin-left: 120px;
+  margin-right: 5px;
 `;
 
 const Select = styled.select`
   padding: 10px;
   margin-right: 20px;
-	width: 190px;
+	width: 200px;
 	border: 1px solid rgba(0, 0, 0, 0.125);
 
 `;
