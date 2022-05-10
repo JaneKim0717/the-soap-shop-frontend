@@ -13,7 +13,7 @@ const Button = styled.button`
     cursor: pointer;
     font-weight: 600;
     display: block;
-    width: 400px;
+    width: 405px;
     line-height: 1.4;
     padding-left: 5px;
     padding-right: 5px;

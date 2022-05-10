@@ -16,7 +16,7 @@ function MainSectionBottom() {
       </div>
 
       <div className='main-section-bottom-left'>
-        <img className='soap-image' src='https://i.imgur.com/WmmU3XJ.png' alt='welcome'/>
+        <img className='soap-image' src='https://i.imgur.com/oU88BhS.png' alt='welcome'/>
         <div className='ms-m-description-left'>
           <h2 className='welcome-titles'>FEEL YOUR BEST</h2>
           <p className='ms-message'>

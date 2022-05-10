@@ -32,7 +32,7 @@ function CartPage() {
   return (
     <Layout>
       <Container>
-        <h1>C A R T</h1>
+        <h1 className='cart-title'>C A R T</h1>
         {
           cartItems.length === 0 ? 
           <div className="empty-cart">

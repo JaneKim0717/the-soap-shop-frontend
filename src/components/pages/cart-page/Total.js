@@ -15,15 +15,17 @@ const Summary = styled.div`
   flex: 1;
   border: 0.5px solid lightgray;
   padding: 20px;
-  height: 40vh;
+  height: 39vh;
   width: 400px;
 `;
 
 const SummaryTitle = styled.h1`
+  font-size: 28px;
   font-weight: bold;
   margin-bottom: 50px;
   text-align: center;
   letter-spacing: 1px;
+  font-family: Montserrat;
 `;
 
 const SummaryItem = styled.div`

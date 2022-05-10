@@ -112,6 +112,9 @@ const Footer = () => {
             <PinterestIcon />
           </SocialIcon>
         </SocialContainer>
+        <Desc>
+          ©JANE KIM
+        </Desc>
       </Left>
       <Center>
         <Title>MENU</Title>

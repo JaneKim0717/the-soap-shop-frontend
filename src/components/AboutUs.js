@@ -10,6 +10,7 @@ const Header = styled.h1`
   text-align: center;
   letter-spacing: 2px;
   font-size: 2.5rem;
+  font-family: Montserrat;
 `;
 
 function AboutUs() {
@@ -18,7 +19,7 @@ function AboutUs() {
     <Layout>
       <div className='main-section-container'>
       <Header>OUR STORY</Header>
-      <img className='ms-m-image' src='https://i.imgur.com/Rj7FA6s.png?1' alt='welcome'/>
+      <img className='ms-m-image' src='https://i.imgur.com/unvURK5.jpg' alt='welcome'/>
         <div className='main-section-middle'>
           <div className='ms-m-description'>
             <h2 className='welcome-titles'>ABOUT US</h2>

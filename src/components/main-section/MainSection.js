@@ -46,31 +46,32 @@ const Info = styled.div`
 `;
 
 const Title = styled.h1`
-    color:white;
-    margin-bottom: 20px;
+  color:white;
+  margin-bottom: 20px;
 `;
 
 const Header = styled.h1`
-    color:black;
-    letter-spacing: 2px;
-    margin-top: 80px;
-    margin-bottom: 20px
+  font-family: Montserrat;
+  color:black;
+  letter-spacing: 2px;
+  margin-top: 80px;
+  margin-bottom: 20px
 `;
 
 const Paragraph = styled.div`
-    color:white;
-    font-size: large;
-    margin-bottom: 20px;
-    width: 500px;
+  color:white;
+  font-size: large;
+  margin-bottom: 20px;
+  width: 500px;
 `;
 
 const Button = styled.button`
-    border:none;
-    padding: 10px;
-    background-color: white;
-    color:gray;
-    cursor: pointer;
-    font-weight: 600;
+  border:none;
+  padding: 10px;
+  background-color: white;
+  color:gray;
+  cursor: pointer;
+  font-weight: 600;
 `;
 
 function MainSection() {

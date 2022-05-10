@@ -48,6 +48,7 @@ const Title = styled.h1`
   font-size: 24px;
   font-weight: 300;
   margin-bottom: 4rem;
+  font-family: Montserrat;
 `;
 
 const Form = styled.form`
@@ -136,7 +137,7 @@ function SignUpForm({ setUser }) {
             <Input 
               type="text"
               name="email"
-              placeholder='EMAIL'
+              placeholder='Email'
               autoComplete="off"
               value={formData.email}
               onChange={handleFormChange}
@@ -145,7 +146,7 @@ function SignUpForm({ setUser }) {
             <Input
               type="text"
               name="first_name"
-              placeholder='FIRST NAME'
+              placeholder='First Name'
               autoComplete="off"
               value={formData.first_name}
               onChange={handleFormChange}
@@ -154,7 +155,7 @@ function SignUpForm({ setUser }) {
             <Input
               type="text"
               name="last_name"
-              placeholder='LAST NAME'
+              placeholder='Last Name'
               autoComplete="off"
               value={formData.last_name}
               onChange={handleFormChange}
@@ -163,7 +164,7 @@ function SignUpForm({ setUser }) {
             <Input
               type="text"
               name="username"
-              placeholder='USERNAME'
+              placeholder='Username'
               autoComplete="off"
               value={formData.username}
               onChange={handleFormChange}
@@ -172,7 +173,7 @@ function SignUpForm({ setUser }) {
             <Input
               type="password"
               name="password"
-              placeholder='PASSWORD'
+              placeholder='Password'
               value={formData.password}
               onChange={handleFormChange}
               autoComplete="current-password"
@@ -181,7 +182,7 @@ function SignUpForm({ setUser }) {
             <Input
               type="password"
               name="password_confirmation"
-              placeholder='PASSWORD CONFIRMATION'
+              placeholder='Password Confirmation'
               value={formData.password_confirmation}
               onChange={handleFormChange}
               autoComplete="current-password"
@@ -205,7 +206,7 @@ function SignUpForm({ setUser }) {
             <Input
               type="text"
               name="username"
-              placeholder='USERNAME'
+              placeholder='Username'
               autoComplete="off"
               value={formData.username}
               onChange={handleFormChange}
@@ -214,7 +215,7 @@ function SignUpForm({ setUser }) {
             <Input
               type="password"
               name="password"
-              placeholder='PASSWORD'
+              placeholder='Password'
               value={formData.password}
               onChange={handleFormChange}
               autoComplete="current-password"
