@@ -23,14 +23,20 @@ function App() {
 
   const [user, setUser] = useState(null);
 
+
   useEffect(() => {
-    fetch('http://localhost:3000/me')
-    .then((res) => {
-      if (res.ok) {
-        res.json()
-        .then((user) => setUser(user));
-      }
-    });
+    if (localStorage.getItem('userId')) {
+      fetch(`http://localhost:3000/users/${localStorage.getItem('userId')}`)
+      .then((res) => {
+        if (res.ok) {
+          res.json()
+          .then((userData) => {
+            setUser(userData)
+            console.log(userData)
+          });
+        }
+      });
+    }
   }, []);
 
 
@@ -57,7 +63,7 @@ function App() {
           </Route>
 
           <Route exact path='/product/:id'> 
-            <SingleProduct /> 
+            <SingleProduct setUser={setUser} /> 
           </Route>
 
           <Route exact path='/cart'> 

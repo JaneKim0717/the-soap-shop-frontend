@@ -90,6 +90,8 @@ function SignUpForm({ setUser }) {
   function signInSuccess(user) {
     setUser(user)
     history.push("/")
+    localStorage.setItem('userId', user.id);
+    console.log('check local storage')
   }
 
   function handleFormSubmit(e) {

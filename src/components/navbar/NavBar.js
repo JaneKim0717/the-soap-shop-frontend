@@ -16,6 +16,7 @@ function NavBar({ user, setUser }) {
 
   function onLogout() {
     setUser(null)
+    localStorage.clear()
     history.push('/')
   }
 

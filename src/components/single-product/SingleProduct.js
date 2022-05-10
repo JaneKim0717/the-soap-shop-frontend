@@ -25,13 +25,24 @@ const Button = styled.button`
     min-height: 44px;
 `;
 
-function SingleProduct({match, history: { push } }) {
+function SingleProduct({setUser, match, history: { push } }) {
 
   const { products } = useContext(ProductsContext)
   const { addProduct, cartItems, increase } = useContext(CartContext)
   const { id } = match.params
   
   const [product, setProduct] = useState(null)
+
+  // const [review, setReview] = useState("")
+  // const [reviewArray, setReviewArray] = useState([])
+
+
+//   useEffect(() => {
+//     fetch('http://localhost:3000/reviews')
+//     .then(response => response.json())
+//     .then(comments => setReviewArray(comments))
+// }, [])
+
   
   useEffect(() => {
     const product = products.find(item => Number(item.id) === Number(id));
@@ -47,6 +58,25 @@ function SingleProduct({match, history: { push } }) {
   
   const { image, name, price, description, ingredients } = product
   const itemInCart = isInCart(product, cartItems)
+
+  // function handleReviewSubmit() {
+	// 	fetch("/reviews", {
+	// 		method: "post",
+	// 		headers: {
+	// 			"content-type": "application/json",
+	// 		},
+	// 		body: JSON.stringify({
+	// 			user_id: user_id,
+	// 			product_id: product.id,
+	// 			review_body: review,
+	// 		}),
+	// 	})
+	// 		.then((res) => res.json())
+	// 		.then((data) => {
+	// 			setReview("")
+	// 			setReviews(reviews.map((x) => [...x, data]))
+	// 		})
+	// }
 
   return (
     <Layout>

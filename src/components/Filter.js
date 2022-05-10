@@ -1,15 +1,14 @@
-import {productFiltered} from "../context/productsSlice"
-import { useDispatch } from "react-redux"
+// import {productFiltered} from "../context/productsSlice"
+// import { useDispatch } from "react-redux"
+import { useContext } from "react"
+import {ProductsContext} from "../context/ProductsContext"
 
 function Filter() {
-	const dispatch = useDispatch()
-	function handleChange(e) {
-		fetch(`http://localhost:3000/productsCategory/${parseInt(e.target.value)}`)
-			.then((resp) => resp.json())
-			.then((data) => {
-				dispatch(productFiltered(data))
-			})
-	}
+	// const dispatch = useDispatch()
+
+	const { handleChange } = useContext(ProductsContext)
+
+
 	return (
 		<select onChange={handleChange}>
       <option value="0">ALL PRODUCTS</option>
