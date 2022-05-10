@@ -17,12 +17,9 @@ import './App.scss';
 
 
 
-
-
 function App() {
 
   const [user, setUser] = useState(null);
-
 
   useEffect(() => {
     if (localStorage.getItem('userId')) {

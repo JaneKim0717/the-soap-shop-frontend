@@ -1,12 +1,12 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import Layout from '../shared/Layout'
 import FeaturedProduct from '../shared/FeaturedProduct'
 import { ProductsContext } from '../../context/ProductsContext'
-import SearchBar from '../SearchBar'
+import Filter from '../Filter'
 import './Shop.styles.scss'
 
 function Shop() {
-  const [search, setSearch] = useState("")
+
   const { products } = useContext(ProductsContext);
   const allProducts = products.map(product => (
     <FeaturedProduct {...product} key={product.id} />
@@ -14,9 +14,9 @@ function Shop() {
 
   return (
     <Layout>
-      <SearchBar search={search} setSearch={setSearch} />
       <div className="product-list-container">
         <h1 className="product-list-title">SHOP ALL PRODUCTS</h1>
+        <Filter />
         <div className="product-list">
           {
             allProducts

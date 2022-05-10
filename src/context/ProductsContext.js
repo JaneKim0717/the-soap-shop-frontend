@@ -11,7 +11,7 @@ function ProductsContextProvider({ children }) {
     .then(products => setProducts(products))
 }, [])
 
-function handleChange(e) {
+function handleFilterChange(e) {
   fetch(`http://localhost:3000/productsCategory/${parseInt(e.target.value)}`)
     .then((resp) => resp.json())
     .then((products) => {
@@ -20,7 +20,7 @@ function handleChange(e) {
 }
 
   return (
-    <ProductsContext.Provider value={{ products, handleChange }}>
+    <ProductsContext.Provider value={{ products, handleFilterChange }}>
       {
         children
       }

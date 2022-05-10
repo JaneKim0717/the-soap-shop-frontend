@@ -1,23 +1,62 @@
-// import {productFiltered} from "../context/productsSlice"
-// import { useDispatch } from "react-redux"
 import { useContext } from "react"
 import {ProductsContext} from "../context/ProductsContext"
+import styled from "styled-components";
+
+const FilterContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const FilterWrap = styled.div`
+  margin: 20px;
+
+`;
+
+const FilterText = styled.span`
+  font-size: 15px;
+  font-weight: 600;
+	margin-left: 160px;
+  margin-right: 10px;
+`;
+
+const Select = styled.select`
+  padding: 10px;
+  margin-right: 20px;
+	width: 190px;
+	border: 1px solid rgba(0, 0, 0, 0.125);
+
+`;
+const Option = styled.option`
+	color: black;
+	background: white;
+	font-weight: small;
+	display: flex;
+	white-space: pre;
+	min-height: 20px;
+	padding: 0px 2px 1px;
+`;
 
 function Filter() {
-	// const dispatch = useDispatch()
 
-	const { handleChange } = useContext(ProductsContext)
+	const { handleFilterChange } = useContext(ProductsContext)
 
 
 	return (
-		<select onChange={handleChange}>
-      <option value="0">ALL PRODUCTS</option>
-			<option value="1">BODY + FACE BARS</option>
-			<option value="2">CANDLES</option>
-			<option value="3">BATH BOMBS</option>
-			<option value="4">BATH SALTS</option>
-			<option value="5">GIFT SETS</option>
-		</select>
+		<FilterContainer>
+			<FilterWrap>
+				<FilterText>FILTER CATEGORY:</FilterText>
+				<Select onChange={handleFilterChange}>
+					<Option value="0">ALL PRODUCTS</Option>
+					<Option value="1">BODY + FACE BARS</Option>
+					<Option value="2">CANDLES</Option>
+					<Option value="3">BATH BOMBS</Option>
+					<Option value="4">BATH SALTS</Option>
+					<Option value="5">GIFT SETS</Option>
+					<Option value="6">ROOM + LINEN SPRAYS</Option>
+				</Select>
+			</FilterWrap>
+		</FilterContainer>
+
 	)
 }
 
