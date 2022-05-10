@@ -60,7 +60,7 @@ function App() {
           </Route>
 
           <Route exact path='/product/:id'> 
-            <SingleProduct setUser={setUser} /> 
+            <SingleProduct user={user} setUser={setUser} /> 
           </Route>
 
           <Route exact path='/cart'> 
