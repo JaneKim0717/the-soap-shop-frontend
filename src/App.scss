@@ -41,11 +41,16 @@ img {
 @media(min-width: 1024px) {
   .products {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 5px;
 
     .featured-product {
       margin: 10px;
+
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      flex: 0 0 350px;
     }
   }
 }
