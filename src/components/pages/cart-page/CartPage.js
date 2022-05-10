@@ -16,6 +16,7 @@ const Button = styled.button`
     cursor: pointer;
     font-weight: 600;
     margin-top: 30px;
+    width: 250px;
 `;
 
 const Container = styled.div`
@@ -36,7 +37,7 @@ function CartPage() {
         {
           cartItems.length === 0 ? 
           <div className="empty-cart">
-            YOUR CART IS EMPTY
+            <h4 className='your-cart-is-empty'>YOUR CART IS EMPTY</h4>
             <div>
               <Button onClick={() => history.push('/shop')}>SHOP OUR PRODUCTS</Button>
             </div> 
