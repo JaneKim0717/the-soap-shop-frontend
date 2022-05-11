@@ -4,10 +4,9 @@ import { ProductsContext } from '../../context/ProductsContext'
 import { CartContext }from '../../context/CartContext'
 import { isInCart } from '../../Helpers'
 import Layout from '../shared/Layout'
+import Reviews from './single-product-reviews/Reviews'
 import styled from "styled-components";
 import './SingleProduct.styles.scss'
-import Reviews from './single-product-reviews/Reviews'
-
 
 
 
@@ -66,22 +65,13 @@ function SingleProduct({ user, setUser, match, history: { push } }) {
 			})
 	}
 
-
   function handleAddReview (newReview) {
     setReviews([...reviews, newReview])
   }
 
-  // function handleDelete(id) {
-  //   const deletedComment = Reviews.filter((review) => review.id !== id)        
-  //   setReviews(deletedComment);
-  // };
-
   function handleClickEditBtn(e) {
-    // const clickedCommentText = e.target.parentElement.parentElement.firstChild.innerText;
     console.log(e.target.previousSibling)
     setCommentValue(e.target.previousSibling.children[2].innerText)
-    // setCommentEditBool(true)
-    // setReview(clickedCommentText)
   }
 
   const handleChangeEditComment = (e) => {
@@ -136,21 +126,14 @@ function SingleProduct({ user, setUser, match, history: { push } }) {
     setReviews([updatedArray]);
 };
 
-function setEditBack(e) {
-    e.preventDefault()
-    setCommentEditBool(false);
-}
+  function setEditBack(e) {
+      e.preventDefault()
+      setCommentEditBool(false);
+  }
 
-// function setEditBack(e) {
-//   // const clickedCommentText = e.target.parentElement.parentElement.firstChild.innerText;
-//   setCommentValue(e.target.previousSibling.children[2].innerText)
-//   setCommentEditBool(true)
-//   // setReview(clickedCommentText)
-// }
-
-function handleEditedChange(e) {
-  setCommentValue(e.target.value)
-}
+  function handleEditedChange(e) {
+    setCommentValue(e.target.value)
+  }
 
   // <------->
   
@@ -228,37 +211,28 @@ function handleEditedChange(e) {
         </form>
 			)}
 
-      <Reviews
-        user={user}
-        productId={product.id}
-        reviews={reviews}
-        setReviews={setReviews}
-
-        handleAddReview={handleAddReview}
-        // handleDelete={handleDelete}
-        handleClickEditBtn={handleClickEditBtn}
-        handleChangeEditComment={handleChangeEditComment}
-        onSubmitEditComment={onSubmitEditComment}
-
-        commentEditBool={commentEditBool}
-        setCommentEditBool={setCommentEditBool}
-        commentValue={commentValue}
-        setCommentValue={setCommentValue}
-        handleDeleteBtn={handleDeleteBtn}
-        setEditBack={setEditBack}
-        handleEditedChange={handleEditedChange}
-
-      ></Reviews>
-    </div>
-
-
-      {/* {user !== null && (
+      {user !== null && (
         <Reviews
+          user={user}
           productId={product.id}
           reviews={reviews}
           setReviews={setReviews}
+
+          handleAddReview={handleAddReview}
+          handleClickEditBtn={handleClickEditBtn}
+          handleChangeEditComment={handleChangeEditComment}
+          onSubmitEditComment={onSubmitEditComment}
+          commentEditBool={commentEditBool}
+          setCommentEditBool={setCommentEditBool}
+          commentValue={commentValue}
+          setCommentValue={setCommentValue}
+          handleDeleteBtn={handleDeleteBtn}
+          setEditBack={setEditBack}
+          handleEditedChange={handleEditedChange}
         ></Reviews>
-			)} */}
+      )}
+    </div>
+
 
     </Layout>
   )
