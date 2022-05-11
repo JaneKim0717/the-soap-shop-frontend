@@ -105,6 +105,23 @@ const ContactItem = styled.div`
   display: flex;
   align-items: center;
   color:white;
+
+  a:link {
+    text-decoration: none;
+  }
+  
+  a:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  a:active {
+    text-decoration: none;
+  }
 `;
 
 const Payment = styled.img`
