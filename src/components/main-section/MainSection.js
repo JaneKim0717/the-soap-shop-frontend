@@ -29,7 +29,7 @@ const Image = styled.img`
   width: 100%;
   height: 100%;
   opacity: 1;
-  filter: brightness(80%);
+  filter: brightness(75%);
   object-fit: cover;
 `;
 
@@ -61,12 +61,14 @@ const Header = styled.h1`
 const Paragraph = styled.div`
   color:white;
   font-size: large;
+  font-weight: 400;
   margin-bottom: 20px;
   width: 500px;
 `;
 
 const Button = styled.button`
   border:none;
+  width: 100px;
   padding: 10px;
   background-color: white;
   color:gray;
