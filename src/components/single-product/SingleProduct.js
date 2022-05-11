@@ -28,7 +28,66 @@ const Button = styled.button`
     min-height: 44px;
 `;
 
+const ReviewButton = styled.button`
+    border:none;
+    padding: 10px;
+    background-color: #f5f5f4;
+    color:black;
+    cursor: pointer;
+    font-weight: 600;
+    display: block;
+    width: 507px;
+    line-height: 1.4;
+    padding-left: 5px;
+    padding-right: 5px;
+    white-space: normal;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    min-height: 44px;
+    margin-left: 630px;
+`;
+
+const ReviewContainer = styled.div`
+  margin-bottom: 80px;
+`;
+
+const ReviewTitle = styled.h3`
+  text-align: left; 
+  font-family: Montserrat;
+  margin-left: 490px;
+  margin-top: -40px;
+`
+
+const ReviewPar = styled.p`
+  text-align: left; 
+  font-family: Montserrat;
+  margin-left: 635px;
+  margin-top: -20px;
+`
+
+const ReviewForm = styled.div`
+  font-family: Montserrat;
+  margin-left: -700px;
+`
+
+const ReviewFormInput = styled.input`
+  width: 500px;
+  height: 100px;
+  margin-right: 200px;
+  margin-left: 300px;
+`
+
+const Hr = styled.hr`
+  background-color: #afafaf;
+  border: none;
+  height: 1px;
+  width: 1100px;
+`;
+
+
+
 function SingleProduct({ user, setUser, match, history: { push } }) {
+
 
   const { products } = useContext(ProductsContext)
   const { addProduct, cartItems, increase } = useContext(CartContext)
@@ -97,9 +156,6 @@ function SingleProduct({ user, setUser, match, history: { push } }) {
       console.log(reviews[0])
 
       const updatedArray = reviews[0].map((reviewItem) => {
-        console.log('Review in Map',reviewItem)
-        console.log('Review in Map ID',reviewItem.id)
-        console.log('Data in Map ID',data.id)
         if (reviewItem.id === data.id) {
           return data
         } else {
@@ -192,46 +248,50 @@ function SingleProduct({ user, setUser, match, history: { push } }) {
       </div>
 
 
-      
 
-    <div className='reviews-container'>
-      {user !== null && (
-        <form className='review-form' onSubmit={handleReviewSubmit}>
-          <p>LEAVE A REVIEW</p>
-          <input
-            className='review-input'
-            as="textarea"
-            placeholder="Leave your Review"
-            value={review}
-            onChange={(e) => setReview(e.target.value)}
-          />
-          <Button variant="secondary">
-            Submit
-          </Button>
-        </form>
-			)}
+      <ReviewTitle>CUSTOMER REVIEWS</ReviewTitle>
+      <Hr />
+        <ReviewContainer>
+          <ReviewForm>
+            {user !== null && (
+              <form className='review-form' onSubmit={handleReviewSubmit}>
+                <ReviewPar>LEAVE A REVIEW</ReviewPar>
+                <ReviewFormInput
+                  className='review-input'
+                  as="textarea"
+                  placeholder=""
+                  value={review}
+                  onChange={(e) => setReview(e.target.value)}
+                />
+                <ReviewButton variant="secondary">
+                  SUBMIT
+                </ReviewButton>
+              </form>
+            )}
+            </ReviewForm>
 
-      {user !== null && (
-        <Reviews
-          user={user}
-          productId={product.id}
-          reviews={reviews}
-          setReviews={setReviews}
+            {user !== null && (
+              <Reviews
+                user={user}
+                productId={product.id}
+                reviews={reviews}
+                setReviews={setReviews}
 
-          handleAddReview={handleAddReview}
-          handleClickEditBtn={handleClickEditBtn}
-          handleChangeEditComment={handleChangeEditComment}
-          onSubmitEditComment={onSubmitEditComment}
-          commentEditBool={commentEditBool}
-          setCommentEditBool={setCommentEditBool}
-          commentValue={commentValue}
-          setCommentValue={setCommentValue}
-          handleDeleteBtn={handleDeleteBtn}
-          setEditBack={setEditBack}
-          handleEditedChange={handleEditedChange}
-        ></Reviews>
-      )}
-    </div>
+                handleAddReview={handleAddReview}
+                handleClickEditBtn={handleClickEditBtn}
+                handleChangeEditComment={handleChangeEditComment}
+                onSubmitEditComment={onSubmitEditComment}
+                commentEditBool={commentEditBool}
+                setCommentEditBool={setCommentEditBool}
+                commentValue={commentValue}
+                setCommentValue={setCommentValue}
+                handleDeleteBtn={handleDeleteBtn}
+                setEditBack={setEditBack}
+                handleEditedChange={handleEditedChange}
+              ></Reviews>
+            )}
+
+        </ReviewContainer>
 
 
     </Layout>
