@@ -13,8 +13,8 @@ const Container = styled.div`
       rgba(255, 255, 255, 0.5),
       rgba(255, 255, 255, 0.5)
     ),
-    // url("https://images.pexels.com/photos/6387877/pexels-photo-6387877.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
-    //   center;
+    url("https://images.pexels.com/photos/6387877/pexels-photo-6387877.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+      center;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -60,7 +60,7 @@ function Checkout() {
 
             <Title> CHECKOUT SUMMARY </Title>
             <CheckoutSummayText>{`TOTAL ITEMS: ${itemCount}`}</CheckoutSummayText>
-            <CheckoutSummaryPrice>{`TOTAL AMOUNT DUE: $${total}.00`}</CheckoutSummaryPrice>
+            <CheckoutSummaryPrice>{`TOTAL AMOUNT: $${total}.00`}</CheckoutSummaryPrice>
             <StripeCheckout />
 
         </Wrapper>
