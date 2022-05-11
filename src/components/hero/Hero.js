@@ -28,12 +28,14 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     paddingBottom: theme.spacing(4),
-    letterSpacing: 6,
+    letterSpacing: 2,
+    fontFamily: 'Montserrat',
   },
 }));
 
 const Button = styled.button`
     border:none;
+    width: 150px;
     padding: 10px;
     background-color: white;
     color:gray;
