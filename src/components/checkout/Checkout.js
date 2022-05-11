@@ -60,7 +60,7 @@ function Checkout() {
 
             <Title> CHECKOUT SUMMARY </Title>
             <CheckoutSummayText>{`TOTAL ITEMS: ${itemCount}`}</CheckoutSummayText>
-            <CheckoutSummaryPrice>{`TOTAL AMOUNT: $${total}.00`}</CheckoutSummaryPrice>
+            <CheckoutSummaryPrice>{`TOTAL AMOUNT DUE: $${total}.00`}</CheckoutSummaryPrice>
             <StripeCheckout />
 
         </Wrapper>

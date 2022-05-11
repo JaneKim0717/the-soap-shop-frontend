@@ -1,3 +1,23 @@
+a:link {
+  text-decoration: underline;
+}
+
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+
+
+
 // ul {
 //   margin: 0px;
 //   padding: 0px;

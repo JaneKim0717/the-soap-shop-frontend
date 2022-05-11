@@ -13,7 +13,9 @@ import Announcement from './components/Announcement';
 import Checkout from './components/checkout/Checkout';
 import Success from './components/checkout/stripe-checkout/Success';
 import Canceled from './components/checkout/stripe-checkout/Canceled';
+import ShippingInfo from './components/footer/ShippingInfo';
 import './App.scss';
+import RefundPolicy from './components/footer/RefundPolicy';
 
 
 
@@ -79,9 +81,18 @@ function App() {
             <Canceled /> 
           </Route> 
 
+          <Route exact path='/shippinginfo'> 
+            <ShippingInfo />
+          </Route>
+
+          <Route exact path='/refunds'> 
+            <RefundPolicy />
+          </Route>
+
           <Route exact path='*'> 
             <NotFound /> 
           </Route>
+
         </Switch>
     </div>
   );

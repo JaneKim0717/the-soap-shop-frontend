@@ -76,6 +76,23 @@ const ListItem = styled.li`
   width: 50%;
   margin-bottom: 10px;
   color:white;
+
+  a:link {
+    text-decoration: none;
+  }
+  
+  a:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  a:active {
+    text-decoration: none;
+  }
 `;
 
 const Right = styled.div`
@@ -121,15 +138,15 @@ const Footer = () => {
       <Center>
         <Title>MENU</Title>
         <List>
-          <ListItem>HOME</ListItem>
+          <ListItem><a href="http://localhost:4000/">HOME</a></ListItem>
 
-          <ListItem>SHOP ALL PRODUCTS</ListItem>
+          <ListItem><a href="http://localhost:4000/shop">SHOP ALL PRODUCTS</a></ListItem>
 
-          <ListItem>SHIPPING INFO</ListItem>
+          <ListItem><a href="http://localhost:4000/shippinginfo">SHIPPING INFO</a></ListItem>
   
-          <ListItem>REFUND POLICY</ListItem>
+          <ListItem><a href="http://localhost:4000/refunds">REFUND POLICY</a></ListItem>
 
-          <ListItem>TERMS OF SERVICE</ListItem>
+          <ListItem><a href="http://localhost:4000/about">ABOUT US</a></ListItem>
 
         </List>
       </Center>
