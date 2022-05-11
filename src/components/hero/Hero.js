@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import ReactPlayer from "react-player";
-import heroVideo from '../../assets/bath-hero.mp4'
+import heroVideo from '../../assets/heroVideo.mp4'
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from "@material-ui/core";
