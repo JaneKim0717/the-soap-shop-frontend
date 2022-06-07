@@ -1,8 +1,15 @@
 # The Soap Shop
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An ecommerce application where users can shop and purchase handmade home & bath products.
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+This project was built with React, Rails & Stripe API. 
+
+[Backend Repository](https://github.com/JaneKim0717/the-soap-shop-backend)
+
+## Project Demo Video 
+https://youtu.be/cBu5TQjht3o 
+[![The Soap Shop Demo Video](https://i.imgur.com/CVAD8uh.jpg)](https://youtu.be/cBu5TQjht3o)
+
 
