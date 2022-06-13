@@ -6,6 +6,21 @@ An ecommerce application where users can shop and purchase handmade home & bath 
 
 This project was built with React, Rails & Stripe API. 
 
+## User Stories
+-Login or Signup for new account.
+
+-Browse inventory of all products available for sale.
+
+-Add product(s) to cart for purchase.
+
+-Navigate to shopping cart where user will be able to update quantity of product(s) or remove product(s).
+
+-Complete transaction with checkout and enter payment/billing/shipping information.
+
+-Receive email confirmation of order purchase.
+
+-Leave customer reviews for a product(s).
+
 [Backend Repository](https://github.com/JaneKim0717/the-soap-shop-backend)
 
 ## Project Demo Video 
